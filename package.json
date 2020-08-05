@@ -1,0 +1,41 @@
+{
+  "name": "linkedin-messager",
+  "version": "1.0.0",
+  "description": "automatically send message to friends at linkedin",
+  "keywords": [
+    "linkedin",
+    "scraper",
+    "crawler"
+  ],
+  "main": "dist/messager.js",
+  "scripts": {
+    "build": "tsc",
+    "send": "node dist/messager.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alphardex/linkedin-messager"
+  },
+  "bugs": {
+    "url": "https://github.com/alphardex/linkedin-messager/issues"
+  },
+  "author": "alphardex <2582347430@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "1.13.0",
+    "winston": "3.1.0"
+  },
+  "devDependencies": {
+    "@types/puppeteer": "^3.0.1",
+    "chai": "4.2.0",
+    "coveralls": "3.0.2",
+    "faker": "4.1.0",
+    "mocha": "5.2.0",
+    "nyc": "^13.1.0",
+    "sinon": "7.2.2",
+    "standard": "12.0.1"
+  },
+  "engines": {
+    "node": ">= 7.6.0"
+  }
+}
