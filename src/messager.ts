@@ -2,8 +2,8 @@ import puppeteer from "puppeteer";
 
 export default async ({ cookies, link, message }) => {
     const messageButtonSel = '.message-anywhere-button'
-    const messageSendButtonSel = '.msg-form__send-button'
-    const sendDelay = 1500
+    const messageFormSel = '.msg-form__contenteditable'
+    const sendDelay = 100
     const viewportSize = {
         width: 1920,
         height: 1080
@@ -19,8 +19,11 @@ export default async ({ cookies, link, message }) => {
     await page.setViewport(viewportSize)
     await page.goto(link)
     await page.click(messageButtonSel)
+    await page.focus(messageFormSel)
     await page.keyboard.type(message)
     await page.waitFor(sendDelay)
-    await page.click(messageSendButtonSel)
+    await page.keyboard.down('Control')
+    await page.keyboard.press('Enter')
+    await page.keyboard.up('Control')
     await browser.close()
 }
